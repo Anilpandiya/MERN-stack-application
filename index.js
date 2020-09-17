@@ -9,10 +9,8 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-const DB = "mongodb+srv://anil:anil@cluster0.sqby9.mongodb.net/<dbname>?retryWrites=true&w=majority";
-
 //connect to the database
-mongoose.connect(DB, { useNewUrlParser: true })
+mongoose.connect(process.env.DB, { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
   .catch(err => console.log(err));
 
